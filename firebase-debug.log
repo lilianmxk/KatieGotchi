@@ -1,0 +1,54 @@
+[debug] [2025-06-12T18:31:28.769Z] ----------------------------------------------------------------------
+[debug] [2025-06-12T18:31:28.775Z] Command:       /opt/homebrew/Cellar/node/23.7.0/bin/node /opt/homebrew/bin/firebase deploy
+[debug] [2025-06-12T18:31:28.775Z] CLI Version:   14.6.0
+[debug] [2025-06-12T18:31:28.775Z] Platform:      darwin
+[debug] [2025-06-12T18:31:28.775Z] Node Version:  v23.7.0
+[debug] [2025-06-12T18:31:28.776Z] Time:          Thu Jun 12 2025 11:31:28 GMT-0700 (Pacific Daylight Time)
+[debug] [2025-06-12T18:31:28.776Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-12T18:31:28.847Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-12T18:31:28.848Z] > authorizing via signed-in user (lijuanmo@gmail.com)
+[debug] [2025-06-12T18:31:28.848Z] [iam] checking project katiegotchi for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-06-12T18:31:28.848Z] Checked if tokens are valid: false, expires at: 1749750297604
+[debug] [2025-06-12T18:31:28.848Z] Checked if tokens are valid: false, expires at: 1749750297604
+[debug] [2025-06-12T18:31:28.848Z] > refreshing access token with scopes: []
+[debug] [2025-06-12T18:31:28.849Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-12T18:31:28.849Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-12T18:31:29.207Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-06-12T18:31:29.207Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-12T18:31:29.217Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/katiegotchi:testIamPermissions [none]
+[debug] [2025-06-12T18:31:29.217Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/katiegotchi:testIamPermissions x-goog-quota-user=projects/katiegotchi
+[debug] [2025-06-12T18:31:29.218Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/katiegotchi:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-12T18:31:29.369Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/katiegotchi:testIamPermissions 200
+[debug] [2025-06-12T18:31:29.369Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/katiegotchi:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-12T18:31:29.370Z] Checked if tokens are valid: true, expires at: 1749756688207
+[debug] [2025-06-12T18:31:29.370Z] Checked if tokens are valid: true, expires at: 1749756688207
+[debug] [2025-06-12T18:31:29.371Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/katiegotchi [none]
+[debug] [2025-06-12T18:31:29.999Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/katiegotchi 200
+[debug] [2025-06-12T18:31:30.000Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/katiegotchi {"projectId":"katiegotchi","projectNumber":"721820024591","displayName":"KatieGotchi","name":"projects/katiegotchi","resources":{"hostingSite":"katiegotchi"},"state":"ACTIVE","etag":"1_27ea2a7e-db76-4574-889e-93bc4dfdb491"}
+[info] 
+[info] === Deploying to 'katiegotchi'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2025-06-12T18:31:30.008Z] Checked if tokens are valid: true, expires at: 1749756688207
+[debug] [2025-06-12T18:31:30.008Z] Checked if tokens are valid: true, expires at: 1749756688207
+[debug] [2025-06-12T18:31:30.008Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/katiegotchi:test [none]
+[debug] [2025-06-12T18:31:30.008Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/katiegotchi:test [omitted]
+[debug] [2025-06-12T18:31:35.406Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/katiegotchi:test 503
+[debug] [2025-06-12T18:31:35.406Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/katiegotchi:test {"error":{"code":503,"message":"Visibility check was unavailable. Please retry the request and contact support if the problem persists","status":"UNAVAILABLE"}}
+[error] 
+[error] Error: Request to https://firebaserules.googleapis.com/v1/projects/katiegotchi:test had HTTP Error: 503, Visibility check was unavailable. Please retry the request and contact support if the problem persists
+[debug] [2025-06-12T18:31:35.543Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 503,
+      "message": "Visibility check was unavailable. Please retry the request and contact support if the problem persists",
+      "status": "UNAVAILABLE"
+    }
+  },
+  "response": {
+    "statusCode": 503
+  }
+}

@@ -1,0 +1,85 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KatieGotchi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login screen -->
+  <div id="auth-container">
+    <h2>Welcome to KatieGotchi</h2>
+    <form id="auth-form">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit" id="login-btn">Log In</button>
+      <button type="button" id="signup-btn">Sign Up</button>
+    </form>
+    <p id="auth-message"></p>
+  </div>
+
+  <!-- Main pet/game screen (hidden until logged in) -->
+  <div id="game-container" style="display: none;">
+    <div class="header">
+      <button id="reset-pet-btn">Reset Pet</button>
+      <button id="logout-btn">Log Out</button>
+    </div>
+    <div class="pet-container">
+      <div id="pet-sprite"></div>
+    </div>
+    <!-- Stats -->
+    <ul class="stats">
+      <li>Age: <span id="stat-age">0</span></li>
+      <li>Weight: <span id="stat-weight">0</span></li>
+      <li>Hunger: <span id="stat-hunger">0</span></li>
+      <li>Health: <span id="stat-health">0</span></li>
+      <li>Discipline: <span id="stat-discipline">0</span></li>
+      <li>Happiness: <span id="stat-happiness">0</span></li>
+    </ul>
+    <!-- Controls (optional, you can add your own controls as needed) -->
+    <!-- Example basic controls for demo -->
+    <div class="controls">
+      <button id="feed-btn">Feed</button>
+      <button id="play-btn">Play</button>
+      <button id="sleep-btn">Sleep</button>
+      <button id="treat-btn">Treat</button>
+      <button id="discipline-btn">Discipline</button>
+    </div>
+    <!-- Optional menus (hidden by default, shown via JS) -->
+    <div id="feed-menu" class="menu hidden">
+      <button data-food="meal">Meal</button>
+      <button data-food="snack">Snack</button>
+      <button id="feed-cancel">Cancel</button>
+    </div>
+    <div id="play-menu" class="menu hidden">
+      <button data-game="direction">Guess Direction</button>
+      <button data-game="math">Math Quiz</button>
+      <button data-game="catch">Catch the Bug</button>
+      <button id="play-cancel">Cancel</button>
+    </div>
+    <div id="game-modal-direction" class="menu hidden">
+      <p>Which way?</p>
+      <button data-dir="←">←</button>
+      <button data-dir="→">→</button>
+      <button id="direction-cancel">Cancel</button>
+    </div>
+    <div id="game-modal-math" class="menu hidden">
+      <p id="math-prompt">?</p>
+      <input type="number" id="math-answer" placeholder="Answer" />
+      <button id="math-submit">Submit</button>
+      <button id="math-cancel">Cancel</button>
+    </div>
+    <div id="game-modal-catch" class="menu hidden">
+      <p>Catch the bug!</p>
+      <div id="bug-area">🐞</div>
+      <button id="catch-cancel">Cancel</button>
+    </div>
+    <!-- Icons for sick/naughty state -->
+    <div id="icon-sick" class="hidden">💀</div>
+    <div id="icon-naughty" class="hidden">😈</div>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
